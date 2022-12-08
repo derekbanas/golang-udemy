@@ -1,0 +1,37 @@
+What is a Database
+A database is data that is structured into rows and columns like a spreadsheet. To receive or change data in a database you send it commands called queries. The database in turn returns a result based on that request.
+Databases contain many tables of data organized into rows and columns. Each column represents one type of data the database stores. Each row contains multiple pieces of data specific to each entity you are describing. For example we store information on students here. Each individual value stored is called a cell. 
+Primary keys are used to define unique entities in your tables. Here id provides a unique value associated with each student.
+Change Database Theme
+File -> Preferences -> Miscellaneous -> Themes
+
+Create a Database
+Right click Databases -> Create -> Database
+Name it and save sales_db
+Right click -> Query Tool -> Start writing SQL queries
+
+Turning an Invoice into a Database
+One way to define what your database needs to contain is to use a real world way of tracking an order. An invoice is a perfect example of that. 
+First I define all the information I want to track on the customer.
+
+Make a Table
+CREATE TABLE customer(
+first_name VARCHAR(30) NOT NULL,
+last_name VARCHAR(30) NOT NULL,
+email VARCHAR(60) NOT NULL,
+company VARCHAR(60) NULL,
+street VARCHAR(50) NOT NULL,
+city VARCHAR(40) NOT NULL,
+state CHAR(2) NOT NULL DEFAULT 'PA',
+zip SMALLINT NOT NULL,
+phone VARCHAR(20) NOT NULL,
+birth_date DATE NULL,
+sex CHAR(1) NOT NULL,
+date_entered TIMESTAMP NOT NULL,
+id SERIAL PRIMARY KEY
+);
+You can find the table -> Schemas -> Public -> Tables
+
+What is Going On? 
+Create table customer creates the table named customer
+When defining what data goes in each cell you must define the type of data you plan to store. In the next video I’ll cover the data types commonly used with Postgres.
